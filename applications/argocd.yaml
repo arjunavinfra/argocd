@@ -3,12 +3,15 @@ kind: Application
 metadata:
   name: argocd
   namespace: argocd
+  labels:
+    app: argocd 
+    entity: ci
 spec:
   project: default
   source:
     repoURL: https://github.com/arjunavinfra/argocd.git
     targetRevision: HEAD
-    path: install 
+    path: Install
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

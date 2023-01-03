@@ -1,14 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: monitoring
   namespace: argocd
+  labels:
+    app: monitoring 
+    entity: obserability
 spec:
   project: default
   source:
     repoURL: https://github.com/arjunavinfra/prometheus-operator.git
     targetRevision: HEAD
-    path: install 
+    path: manifests 
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
