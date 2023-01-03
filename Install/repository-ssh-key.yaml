@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:arjunavinfra/prometheus-operator
+  url: git@github.com:arjunavinfra/prometheus-operator.git
 
 ---
 apiVersion: v1
@@ -20,7 +20,7 @@ metadata:
 stringData:
   type: git
   url: git@github.com:arjunavinfra/csvserver.git
-  
+
 ---
 apiVersion: v1
 kind: Secret
@@ -83,3 +83,4 @@ stringData:
     mOAGzJRRtWQu9fdgV0BKntXaWXsKTHbWHFhtpQQxytVAVEC3WEhd6K013/wRmr22mOI52O
     S6QAMkXuxtXnEAAAAOYXJqdW5AQVJKVU4tQVYBAgMEBQ==
     -----END OPENSSH PRIVATE KEY-----
+
