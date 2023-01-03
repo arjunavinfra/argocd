@@ -2,11 +2,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: argocd
-bases:
-  - base
 resources:
-  - ../applications
-  - ../projects
-
-  - repository-ssh-key.yaml
+  - namespace.yaml
+  - install.yaml
 

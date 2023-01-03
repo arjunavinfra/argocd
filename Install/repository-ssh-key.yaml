@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: prometheus-operator
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra/prometheus-operator
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: csvserver
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra/csvserver.git
+  
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubernetes
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra/kubernetes.git
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: private-repo-creds
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repo-creds
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra
+  sshPrivateKey: |
+    -----BEGIN OPENSSH PRIVATE KEY-----
+    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
+    -----END OPENSSH PRIVATE KEY-----
