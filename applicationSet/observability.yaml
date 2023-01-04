@@ -11,6 +11,12 @@ spec:
       revision: HEAD
       directories:
       - path: manifests/*
+      - path: manifests/blackboxexporter
+        exclude: true
+      - path: manifests/prometheusadapter
+        exclude: true
+      - path: manifests/minio
+        exclude: true
   template:
     metadata:
       name: '{{.path.basename}}'
