@@ -4,5 +4,6 @@ kind: Kustomization
 namespace: argocd
 resources:
   - namespace.yaml
-  - install.yaml
+  - argocd-crd-operator.yaml
+  - applicationset-crd.yaml
 

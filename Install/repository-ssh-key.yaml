@@ -22,6 +22,19 @@ stringData:
   url: git@github.com:arjunavinfra/csvserver
 
 ---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: applications
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra/applications
+
+---
 apiVersion: v1
 kind: Secret
 metadata:

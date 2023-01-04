@@ -7,6 +7,6 @@ bases:
 resources:
   - ../applications
   - ../projects
-
+  - ../applicationSet
   - repository-ssh-key.yaml
 
