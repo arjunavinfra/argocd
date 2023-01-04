@@ -7,5 +7,5 @@ bases:
 resources:
   - repository-ssh-key.yaml
 
-# patchesStrategicMerge:
-#   - configmap-health.yaml
+patchesStrategicMerge:
+  - configmap-health.yaml
