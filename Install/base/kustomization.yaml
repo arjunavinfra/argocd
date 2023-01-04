@@ -5,5 +5,7 @@ namespace: argocd
 resources:
   - namespace.yaml
   - argocd-crd-operator.yaml
-  - applicationset-crd.yaml
+
+patchesStrategicMerge:
+  - applicationset-crd.yaml"
 
