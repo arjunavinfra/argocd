@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:arjunavinfra/prometheus-operator.git
+  url: git@github.com:arjunavinfra/prometheus-operator
 
 ---
 apiVersion: v1
@@ -19,7 +19,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:arjunavinfra/csvserver.git
+  url: git@github.com:arjunavinfra/csvserver
 
 ---
 apiVersion: v1
@@ -31,7 +31,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:arjunavinfra/kubernetes.git
+  url: git@github.com:arjunavinfra/argocd
 
 ---
 apiVersion: v1

@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/arjunavinfra/argocd.git
+    repoURL: git@github.com:arjunavinfra/argocd.git
     targetRevision: HEAD
     path: Install
   destination:
