@@ -10,6 +10,19 @@ stringData:
   url: git@github.com:arjunavinfra/prometheus-operator
 
 ---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-podinfo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra/app-podinfo.git
+
+---
 apiVersion: v1
 kind: Secret
 metadata:

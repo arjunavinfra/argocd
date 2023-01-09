@@ -11,6 +11,8 @@ fi
 
 kubectl apply -k ./Install
 
+kubectl wait --namespace ingress-nginx   --for=condition=ready pod  -l component=argocd   --timeout=200s -n argocd
+
 echo -e "\n"
-echo -e "Admin Password:  `kubectl -n argocd  get secret argocd-initial-admin-secret -ojson   | jq .data.password -r | base64 -d`"
+echo -e "Admin Password:  `kubectl  get secret argocd-initial-admin-secret -ojson -n argocd  | jq .data.password -r | base64 -d`"
 echo -e "\n"

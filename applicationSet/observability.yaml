@@ -7,7 +7,7 @@ spec:
   goTemplate: true
   generators:
   - git:
-      repoURL: git@github.com:arjunavinfra/prometheus-operator.git
+      repoURL: git@github.com:arjunavinfra/app-podinfo.git
       revision: HEAD
       directories:
       - path: manifests/*
