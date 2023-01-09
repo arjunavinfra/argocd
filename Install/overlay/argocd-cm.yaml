@@ -8,6 +8,10 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
+  accounts.alice: apiKey, login
+  # disables user. User is enabled by default
+  accounts.alice.enabled: "true"
+
   resource.customizations.health.argoproj.io_Application: |
     hs = {}
     hs.status = "Progressing"
