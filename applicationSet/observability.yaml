@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: obserability-app-set
+  name: obserability
   namespace: argocd
 spec:
   goTemplate: true
   generators:
   - git:
-      repoURL: git@github.com:arjunavinfra/app-podinfo.git
+      repoURL: git@github.com:arjunavinfra/prometheus-operator.git
       revision: HEAD
       directories:
       - path: manifests/*
