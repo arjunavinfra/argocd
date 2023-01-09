@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: helm
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: helm
+  url:  https://arjunavinfra.github.io/applications/app-helm/charts
+  type: helm
+# ---
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: argo-helm
+#   namespace: argocd
+#   labels:
+#     argocd.argoproj.io/secret-type: repository
+# stringData:
+#   name: argo
+#   url: https://arjunavinfra.github.io/applications/app-helm/charts
+#   type: helm
+#   username: my-username
+#   password: my-password
+#   tlsClientCertData: ...
+#   tlsClientCertKey: ...
