@@ -10,28 +10,12 @@ spec:
       revision: HEAD
       directories:
       - path: podinfo/deploy/webapp/*
-      # - path: charts
-      #   exclude: true
-      # - path: cmd
-      #   exclude: true  
-      # - path: cue
-      #   exclude: true    
-      # cmd 
-      # cue 
-      # deploy/bases
-      # deploy/overlays 
-      # deploy/secure 
-      # deploy/webapp
-      # kustomize 
-      # otel
-      # pkg 
-      # test ui
   template:
     metadata:
       name: '{{.path.basename}}'
       labels:
         entity: app
-        app: '{{.path.path}}'  
+        app: '{{.path.basename}}'
     spec:
       project: "default"
       source:
