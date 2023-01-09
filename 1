@@ -1,0 +1,92 @@
+#!/bin/bash
+
+network(){
+
+echo -e "\n"
+git clone https://github.com/arjunavinfra/kubernetes.git /tmp/kube-plgins
+cd /tmp/kube-plgins/networking/metalLB/
+bash Deploy.sh
+cd /tmp/kube-plgins/networking/ingress
+bash Deploy.sh
+
+}
+
+if [[ "${1}" == '--reset' ]]; then
+rm -rf /tmp/kube-plgins
+kind delete clusters --all ;
+
+cat <<EOF | kind create cluster --name kubex --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+EOF
+
+network
+
+elif [[ "${1}" == '--clean' ]]; then
+        kind delete clusters --all ;
+
+elif [[ "${1}" == '--prod' ]]; then
+        kind delete clusters --all ;
+
+
+kind delete clusters --all ;
+
+cat <<EOF | kind create cluster --name kubex --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+EOF
+
+cat <<EOF | kind create cluster --name prod --config=-
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+
+EOF
+
+network
+
+array=`kubectl  config get-contexts | awk '{ print $3 }'  | grep kind ` ; a=("${array[@]%%:*}") ; echo $a
+
+
+else
+        echo "cleaning resources"
+        kubectl delete all --all
+fi
+
