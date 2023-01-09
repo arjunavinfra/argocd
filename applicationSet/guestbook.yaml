@@ -2,7 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: guestbook
-  namespace: argocd
 spec:
   goTemplate: true
   generators:
@@ -10,7 +9,7 @@ spec:
       repoURL: git@github.com:arjunavinfra/app-podinfo.git
       revision: HEAD
       directories:
-      - path: kustomize/*
+      - path: deploy/webapp/*
   template:
     metadata:
       name: '{{.path.basename}}'
