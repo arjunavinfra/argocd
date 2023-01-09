@@ -9,6 +9,6 @@ commonLabels:
 
 resources:
   - ./overlay
-  - ../applications
   - ../projects
+  - ../applications
   - ../applicationSet
