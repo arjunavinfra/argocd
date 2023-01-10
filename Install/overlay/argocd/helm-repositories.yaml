@@ -24,10 +24,10 @@ stringData:
 apiVersion: v1
 kind: Secret
 metadata:
-  name: hc-vault
+  name: hashicorp
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
   name: hc-vault
-  url: https://helm.releases.hashicorp.com
+  url:  https://helm.releases.hashicorp.com
   type: helm
