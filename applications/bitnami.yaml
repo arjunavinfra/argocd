@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bitnami
+  labels:
+    app: bitnami 
+    entity: secret-manager
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:arjunavinfra/kubernetes.git
+    targetRevision: HEAD
+    path: secret
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bitnami
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true

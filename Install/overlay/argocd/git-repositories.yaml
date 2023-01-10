@@ -9,6 +9,16 @@ stringData:
   type: git
   url: git@github.com:arjunavinfra/prometheus-operator
 
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubernetes-operator
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:arjunavinfra/kubernetes.git
+
 ---
 apiVersion: v1
 kind: Secret
