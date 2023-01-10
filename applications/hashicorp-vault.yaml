@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: hashicorp-vault
+    namespace: vault
     server: 'https://kubernetes.default.svc'
   source:
     path: ''
@@ -24,8 +24,8 @@ spec:
           value: 5Gi
   project: default
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
     syncOptions:
-      - PruneLast=true
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
