@@ -16,8 +16,8 @@ resources:
   # - argocd-cm.yaml
 
 patchesStrategicMerge:
-   - argocd-cm.yaml
-   - argocd-repo-server-deploy.yaml
-   
+   - argocd-cm.yaml #argocd vault config
+   - argocd-repo-server-deploy.yaml #argocd vault config
+
 # #   - argocd-rbac-cm.yaml
 #   # - argocd-secret.yaml
