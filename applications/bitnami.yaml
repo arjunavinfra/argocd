@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: git@github.com:arjunavinfra/kubernetes.git
     targetRevision: HEAD
-    path: secret
+    path: secret/bitnami
   destination:
     server: https://kubernetes.default.svc
     namespace: bitnami
