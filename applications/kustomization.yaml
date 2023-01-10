@@ -7,3 +7,4 @@ resources:
   - bitnami.yaml
   - monitoring.yaml
   - nginx-helm.yaml
+  - hashicorp-vault.yaml

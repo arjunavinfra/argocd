@@ -19,3 +19,15 @@ stringData:
   name: argo
   url: https://bitnami-labs.github.io/sealed-secrets
   type: helm
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hc-vault
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: hc-vault
+  url: https://helm.releases.hashicorp.com
+  type: helm

@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hc-vault
+  labels:
+    app: vault 
+    entity: secete
+spec:
+  project: default
+  source:
+    repoURL: 'https://helm.releases.hashicorp.com'
+    targetRevision: 1.12.1
+    # helm:
+    #   valueFiles:
+    #     - values.yaml
+    chart: vault
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: hashicorp-vault
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
