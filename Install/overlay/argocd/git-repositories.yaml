@@ -8,6 +8,7 @@ metadata:
 stringData:
   type: git
   url: git@github.com:arjunavinfra/prometheus-operator
+---
 
 apiVersion: v1
 kind: Secret
