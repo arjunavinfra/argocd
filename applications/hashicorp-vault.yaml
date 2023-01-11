@@ -13,15 +13,11 @@ spec:
     targetRevision: 0.23.0
     chart: vault
     helm:
-      valueFiles:
-        - values.yaml
+      # valueFiles:
+      #   - values.yaml
       parameters:
         - name: ui.serviceType
           value: LoadBalancer
-        - name: server.dataStorage.size
-          value: 5Gi
-        - name: server.auditStorage.size
-          value: 5Gi
   project: default
   syncPolicy:
     syncOptions:

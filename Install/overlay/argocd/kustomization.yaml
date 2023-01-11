@@ -8,7 +8,7 @@ bases:
 resources:
   - git-repositories.yaml
   - helm-repositories.yaml
-  - argocd-vault-plugin-credentials.yaml #vault credentials
+  - argocd-vault-plugin-credentials.yaml # vault credentials
 
 
 
@@ -16,8 +16,8 @@ resources:
   # - argocd-cm.yaml
 
 patchesStrategicMerge:
-   - argocd-cm.yaml #argocd vault config
-   - argocd-repo-server-deploy.yaml #argocd vault config
+   - argocd-cm.yaml # vault config
+   - argocd-repo-server-deploy.yaml # vault config
 
 # #   - argocd-rbac-cm.yaml
 #   # - argocd-secret.yaml
