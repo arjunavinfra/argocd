@@ -22,16 +22,10 @@ spec:
           value: 'true'
         - name: ui.serviceType
           value: LoadBalancer
+        - name: ui.targetPort
+          value: '8200'
         - name: ui.externalPort
-          value: '8200' 
-
-ui:
-  enabled: true
-  serviceType: "LoadBalancer"
-  serviceNodePort: null
-  externalPort: 8200
-
-
+          value: '8200'
   project: default
   syncPolicy:
     syncOptions:
