@@ -18,8 +18,20 @@ spec:
         #   value: 'true'
         # - name: server.ha.replicas
         #   value: '3'
+        - name: ui.enabled
+          value: 'true'
         - name: ui.serviceType
           value: LoadBalancer
+        - name: ui.externalPort
+          value: '8200' 
+
+ui:
+  enabled: true
+  serviceType: "LoadBalancer"
+  serviceNodePort: null
+  externalPort: 8200
+
+
   project: default
   syncPolicy:
     syncOptions:
