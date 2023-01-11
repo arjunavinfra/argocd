@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: proj
+  name: vault
 spec:
   destination:
     name: ''
@@ -20,5 +20,10 @@ spec:
           value: '3'
         - name: ui.serviceType
           value: LoadBalancer
-
   project: control-tec
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
