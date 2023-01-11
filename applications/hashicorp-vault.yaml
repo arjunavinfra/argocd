@@ -14,10 +14,10 @@ spec:
     chart: vault
     helm:
       parameters:
-        - name: server.ha.enabled
-          value: 'true'
-        - name: server.ha.replicas
-          value: '3'
+        # - name: server.ha.enabled
+        #   value: 'true'
+        # - name: server.ha.replicas
+        #   value: '3'
         - name: ui.serviceType
           value: LoadBalancer
   project: default
