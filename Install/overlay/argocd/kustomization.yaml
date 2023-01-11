@@ -18,7 +18,9 @@ resources:
 patchesStrategicMerge:
    - argocd-cm.yaml # vault config
    - argocd-repo-server-deploy.yaml # vault config
-   - argocd-secret.yaml
+  #  - argocd-notification-secret.yaml
+  #  - argocd-notifications-cm.yaml
+  #  - argocd-secret.yaml
 
 # #   - argocd-rbac-cm.yaml
 #   # - argocd-secret.yaml
