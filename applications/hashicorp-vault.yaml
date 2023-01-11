@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vault
+  name: proj
 spec:
   destination:
     name: ''
@@ -13,15 +13,9 @@ spec:
     targetRevision: 0.23.0
     chart: vault
     helm:
-      # valueFiles:
-      #   - values.yaml
       parameters:
-        - name: ui.serviceType
-          value: LoadBalancer
-  project: default
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-    automated:
-      selfHeal: true
-      prune: true
+        - name: server.ha.enabled
+          value: 'true'
+        - name: server.ha.replicas
+          value: '3'
+  project: control-tec
