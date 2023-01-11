@@ -2,5 +2,23 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+bases:
+  - ../base/
+
 resources:
-  - argocd
+  - git-repositories.yaml
+  - helm-repositories.yaml
+  - argocd-vault-plugin-credentials.yaml # vault credentials
+
+
+#   # - argocd-cm.yaml
+
+patchesStrategicMerge:
+   - argocd-cm.yaml # vault config
+   - argocd-repo-server-deploy.yaml # vault config
+  #  - argocd-notification-secret.yaml
+  #  - argocd-notifications-cm.yaml
+   - argocd-secret.yaml
+
+# #   - argocd-rbac-cm.yaml
+#   # - argocd-secret.yaml
