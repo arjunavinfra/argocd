@@ -20,7 +20,7 @@ spec:
           value: '3'
         - name: ui.serviceType
           value: LoadBalancer
-  project: control-tec
+  project: default
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
