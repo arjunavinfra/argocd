@@ -2,10 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: vault
-  namespace: argocd
 spec:
   destination:
-    namespace: argocd
+    namespace: vault
     server: https://kubernetes.default.svc 
   project: default
   source:
